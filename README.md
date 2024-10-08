@@ -1,6 +1,6 @@
 # Bahnsteuerung
 Steuerung einer Märklin-Modelleisenbahn 
-unter Verwendung der Routinen aus dem [CANguru-System](https://github.com/CANguru-System)
+unter Verwendung der / oder in Anlehnung an Routinen aus dem [CANguru-System](https://github.com/CANguru-System)
 ## Änderungen zum Original
 (wenn es denn so funktioniert)
 * Steuerung durch angepasste Software auf einem Raspberry Pi mit Touchscreen
@@ -8,10 +8,10 @@ unter Verwendung der Routinen aus dem [CANguru-System](https://github.com/CANgur
 * Verbindung durch WLAN
 ## Struktur
 > [!Note]
-> geplant
+> geplant 
 ```mermaid
-flowchart TD
-    User-->|Touchscreen| Raspberry
+flowchart LR
+    User-->|Touchscreen| Raspberry 
     User-->Märklin-Steuerung
     Raspberry-->|WLAN| Olimex;
     Olimex-->|CAN-Bus| Gleisbox
@@ -20,5 +20,6 @@ flowchart TD
     Schiene-->Loks
     Raspberry-->|WLAN| ESP32-Steuerungen
     ESP32-Steuerungen-->Weichen/Signale/Häuser
+    ESP32-Steuerungen-->Burgbeleuchtung
   
 ```
