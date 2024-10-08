@@ -31,3 +31,8 @@
 *.out
 *.app
 *.bak
+/01LichtBurg/.vscode
+01LichtBurg/Doku/Doxyfile
+01LichtBurg/include/README
+01LichtBurg/lib/README
+/01LichtBurg/test
