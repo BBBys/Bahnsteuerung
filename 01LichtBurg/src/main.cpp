@@ -1,4 +1,12 @@
-#include <Arduino.h>
+/**
+ * @file main.cpp
+ * @brief Licht und Effekte an der Burg
+ * @version 1.0
+ * @date 8 Okt 2024
+ * @author Dr. Burkhard Borys, Zeller Ring 15, 34246 Vellmar, Deutschland
+ * @copyright Copyright (c) 2024 B. Borys
+ */ \
+#include<Arduino.h>
 #include "Licht.h"
 /// @brief wann wird weitergeschaltet
 /// @param zeit in Sekunden
