@@ -21,5 +21,6 @@ flowchart LR
     Raspberry-->|WLAN| ESP32-Steuerungen
     ESP32-Steuerungen-->Weichen/Signale/Häuser
     ESP32-Steuerungen-->Burgbeleuchtung
+    ESP32-Steuerungen-->Bahnhofsbeleuchtung
   
 ```
