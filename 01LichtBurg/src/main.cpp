@@ -5,9 +5,13 @@
  * @date 8 Okt 2024
  * @author Dr. Burkhard Borys, Zeller Ring 15, 34246 Vellmar, Deutschland
  * @copyright Copyright (c) 2024 B. Borys
- */ \
+ */ 
 #include<Arduino.h>
 #include "Licht.h"
+
+#include <EspMQTTClient.h>
+extern EspMQTTClient client;
+
 /// @brief wann wird weitergeschaltet
 /// @param zeit in Sekunden
 /// @return 
@@ -53,12 +57,23 @@ void setup()
   turm1 = new BLicht(TURM1, TURMAN - 33, TURMAUS);
   turm2 = new BLicht(TURM2, TURMAN + 33, TURMAUS);
   randomSeed(analogRead(0));
+  /// MQTT
+#ifdef NDEBUG
+  client.enableDebuggingMessages(false);
+#else
+  client.enableDebuggingMessages(true);
+#endif
+  client.enableHTTPWebUpdater("/");
+  client.enableLastWillMessage("Burg/lastwill", "Abbruch Burg"); /// LWT-Meldung
+  log_d("MQTT---Init OK");
 }
 
 void loop()
 {
   /// Tag oder Nacht laut LDR
   int sensorValue;
+  client.loop(); // für MQTT
+
   sensorValue = analogRead(SENSOR);
   tag = (sensorValue > 600);
   dunkel = (sensorValue < 700);

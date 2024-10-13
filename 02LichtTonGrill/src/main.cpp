@@ -25,7 +25,7 @@ void setup()
   pixels.setBrightness(25);
   log_d("Neopixel Setup...fertig");
   delay(500);
-
+/// MQTT
 #ifdef NDEBUG
   client.enableDebuggingMessages(false);
 #else
