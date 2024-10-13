@@ -22,14 +22,24 @@ Anzeigetafel
 in Arbeit.
 
 - [ ] grundlegender Code
-- [ ] LED-Kette
+- [ ] LED-Kette schalten
 - [ ] Anzeigetafel
-- [ ] MQTT-Steuerung
+- [ ] MQTT
+  - [ ] MQTT-Aufbau
+  - [ ] WLAN
+  - [ ] MQTT-Ablaufsteuerung
+- [ ] Ton
 - [ ] Hardware
   - [ ] LED-Kette
   - [ ] Anzeigetafel
-- [ ] Ton
-
+  - [ ] Lautsprecher
+  - [ ] Bodenplatte
+      - [ ] Vorplatz
+      - [ ] Parkplätze
+      - [ ] Fahrradständer
+      - [ ] Bushaltestelle
+    - [ ] Schilder
+## Zeitlicher Ablauf
 ## Quellen
 
 - Beispielprogramm für OLED-Display: Written by Limor Fried/Ladyada  
