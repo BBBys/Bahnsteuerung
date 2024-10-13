@@ -15,10 +15,48 @@ in Arbeit.
 
 - [x] grundlegender Code
 - [ ] LEDs schalten
-- [x] MQTT-Steuerung
+- [ ] SD-Karte 
+  - [ ] lesen
+  - [ ] Ton und Musik ausgeben
+- [ ] MQTT
+  - [x] MQTT-Aufbau
+  - [ ] WLAN
+  - [ ] MQTT-Ablaufsteuerung
 - [ ] Hardware
-- [ ] Ton
-
+  - [ ] LED-Ring ankleben
+  - [ ] LED in Grills
+  - [ ] Lautsprecher
+  - [ ] Bodenplatte
+    - [ ] Gras
+    - [ ] Grills
+    - [ ] Schilder
+    - [ ] Bänke, Tische
+  - [ ] Verkleidung
+    - [ ] Hügel
+    - [ ] Gras
+## Zeitlicher Ablauf
+```mermaid
+---
+title: "Beleuchtung"
+---
+packet-beta
+  0-13: "aus"
+  14-17: "gedimmt weiß"
+  18-20: "farbig"
+  21-22: "Disco"
+  23-24: "Blues"
+```
+```mermaid
+---
+title: "Ton"
+---
+packet-beta
+  0-13: "Ruhe"
+  14-17: "Arbeitsgeräusche"
+  18-20: "Tanzmusik"
+  21-22: "Disco"
+  23-24: "Blues"
+```
 ## Quellen
 
 Verwendet 
