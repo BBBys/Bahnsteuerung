@@ -1,6 +1,8 @@
 #include "bahnhof.h"
 #include "uhr.h"
-
+#include <time.h>
+#include <time.h>
+#include <sys/time.h>
 Uhr uhr;
 
 Uhr::Uhr( int r)
@@ -37,7 +39,19 @@ void Uhr::zifferblatt()
 /// @brief setzt Zeit auf kur vor die angegebene Stunde
 /// @param std Stunde, wo gleich anfängt
 void Uhr::stellen(u_int8_t std)
-{
+{ /*
+     int clock_settime(clockid_t clock_id, const struct timespec *tp);
+     int clock_gettime(clockid_t clock_id, struct timespec * tp);
+update the current time immediately, use the POSIX function settimeofday().
+ struct tm timeinfo;
+
+ time(&now);
+ // Set timezone to China Standard Time
+ setenv("TZ", "CST-8", 1);
+ tzset();
+
+ localtime_r(&now, &timeinfo);
+ */
     struct tm t = {0, 0, 0, 1, 7, 2024, 0, 0, 0};
     /*std--;
     if (std < 0)
@@ -46,6 +60,8 @@ void Uhr::stellen(u_int8_t std)
     t.tm_hour = std;
     t.tm_min = 58;
     Zeit = mktime(&t);
+    struct timeval now = {.tv_sec = Zeit};
+    settimeofday(&now, NULL);
     verstellt = true;
 }
 /// @brief lösche Uhr und zeichne neu mit aktueller Uhrzeit

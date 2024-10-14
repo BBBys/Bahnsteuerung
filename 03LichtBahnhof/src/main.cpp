@@ -2,7 +2,7 @@
  * @file main.cpp
  * @brief Licht, Ton und Anzeige am Bahnhof
  * @version 1.1
- * @date 10 Okt 2024 
+ * @date 14 10 Okt 2024 
  * @author Dr. Burkhard Borys, Zeller Ring 15, 34246 Vellmar, Deutschland
  * @copyright Copyright (c) 2024  B. Borys
  */
@@ -28,25 +28,31 @@ void setup()
   Uhr *uhr=new Uhr( 31);
 
   log_d("begin...");
+  #ifdef neop
   pixels.begin(); // INITIALIZE NeoPixel strip object (REQUIRED)
   pixels.setBrightness(25);
   log_d("Neopixel Setup...fertig");
+  #endif
   delay(500);
-/// MQTT
+  #ifdef MQTTein
+/// MQTT ------------------------------------------------------------
 #ifdef NDEBUG
   client.enableDebuggingMessages(false);
 #else
   client.enableDebuggingMessages(true);
 #endif
   client.enableHTTPWebUpdater("/");
-  client.enableLastWillMessage("Bahnhof/lastwill", "Abbruch Bahnhof"); /// LWT-Meldung
+  client.enableLastWillMessage(MQTTNAME+"/lastwill", "Abbruch Bahnhof"); /// LWT-Meldung
   log_d("MQTT---Init OK");
+#endif
   Zustand = zuIni;
 }
 
 void loop()
 {
+#ifdef MQTTein
   client.loop();  //für MQTT
+#endif
   uhr.loop();
   switch (Zustand)
   {

@@ -10,9 +10,10 @@
 #include <Adafruit_NeoPixel.h>
 #include "bahnhof.h"
 int iNUMPIXELS = 0, NEOPIXELPIN = 0;
-extern tZustande Zustand,
-    Unterzst;
+extern tZustande Zustand,Unterzst;
+#ifdef neop
 Adafruit_NeoPixel pixels(iNUMPIXELS, NEOPIXELPIN, NEO_GRB + NEO_KHZ800);
 // Adafruit_NeoPixel pixels(iNUMPIXELS, NEOPIXELPIN,);
+#endif
 #define DELAYVAL 500 // Time (in milliseconds) to pause between pixels
 

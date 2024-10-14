@@ -15,7 +15,7 @@ Ansagen und Geräusche
 Anzeigetafel
 
 - Uhr
-- Abfarten
+- Abfahrten
 
 ## Status
 
@@ -24,6 +24,7 @@ in Arbeit.
 - [ ] grundlegender Code
 - [ ] LED-Kette schalten
 - [ ] Anzeigetafel
+- [ ] Uhrzeit
 - [ ] MQTT
   - [ ] MQTT-Aufbau
   - [ ] WLAN

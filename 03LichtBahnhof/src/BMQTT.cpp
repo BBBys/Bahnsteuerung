@@ -16,11 +16,8 @@ extern Uhr uhr;
 extern Ticker Zeitgeber;
 extern Adafruit_NeoPixel pixels;
 extern tZustande Zustand;
-/*
-   ================================================================================================
-   MQTT
-   https://github.com/plapointe6/EspMQTTClient
-*/
+#ifdef MQTTein
+// https://github.com/plapointe6/EspMQTTClient
 EspMQTTClient client(
     WLANSSID,
     WLANPWD,
@@ -36,12 +33,13 @@ EspMQTTClient client(
 */
 /**
  * @brief MQTT-Callback
- *
+ * Topics:
+ * uhr/zeit Stundenwechsel
  */
 void onConnectionEstablished()
 {
    log_d("onConnectionEstablished...");
-   client.subscribe("u/zeit", [](const String &payload)
+   client.subscribe("uhr/zeit", [](const String &payload)
                     {
                        u_int8_t pl;
 #ifndef NDEBUG                       
@@ -67,3 +65,4 @@ void onConnectionEstablished()
    client.publish("OTA-Pwd", OTAPASSWD);
    client.publish("Status", "Bahnhof läuft");
 } // void onConnectionEstablished()
+#endif
