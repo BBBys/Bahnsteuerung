@@ -42,9 +42,9 @@ void onConnectionEstablished()
    client.subscribe("uhr/zeit", [](const String &payload)
                     {
                        u_int8_t pl;
-#ifndef NDEBUG                       
+#ifndef NDEBUG
                        Serial.println(payload);
-#endif                                              
+#endif
                        pl = payload.toInt();
                        uhr.stellen(pl);
                        // Anzeigen();
@@ -57,9 +57,9 @@ void onConnectionEstablished()
    //                    Anzeigen();
    //                  });
    /**
-       * @brief 
-       * 
-       */
+    * @brief
+    *
+    */
    client.publish("SWDatum", __DATE__);
    client.publish("OTA-Usr", OTAUSER);
    client.publish("OTA-Pwd", OTAPASSWD);
