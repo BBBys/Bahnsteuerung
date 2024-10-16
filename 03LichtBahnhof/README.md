@@ -25,6 +25,7 @@ in Arbeit.
 - [ ] LED-Kette schalten
 - [ ] Anzeigetafel
 - [ ] Uhrzeit
+- [ ] Lichtsteuerung
 - [ ] MQTT
   - [ ] MQTT-Aufbau
   - [ ] WLAN

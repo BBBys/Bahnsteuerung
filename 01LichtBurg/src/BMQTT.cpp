@@ -3,7 +3,7 @@
  * @brief MQTT für Burg
  * @version 1.1
  * @date 9 Okt 2024 14 4 3 OKT 27 Sep 2023
- * * @author Dr. Burkhard Borys, Zeller Ring 15, 34246 Vellmar, Deutschland
+ * @author Dr. Burkhard Borys, Zeller Ring 15, 34246 Vellmar, Deutschland
  * @copyright Copyright (c) 2023-2024 B. Borys
  */
 #include "LichtBurg.h"
