@@ -1,14 +1,19 @@
 # Bahnsteuerung
-Steuerung einer Märklin-Modelleisenbahn 
+
+Steuerung einer Märklin-Modelleisenbahn
 unter Verwendung der / oder in Anlehnung an Routinen aus dem [CANguru-System](https://github.com/CANguru-System)
+
 ## Änderungen zum Original
+
 (wenn es denn so funktioniert)
-* Steuerung durch angepasste Software auf einem Raspberry Pi mit Touchscreen
-   ![Raspberry Pi mit Touchscreen](bilder/b1.jpg)
+
+* Steuerung durch angepasste Software auf einem Raspberry Pi mit Touchscreen ![Raspberry Pi mit Touchscreen](bilder/b1.jpg)
 * Verbindung durch WLAN
+
 ## Struktur
-> [!Note]
-> geplant 
+
+> [!Note] geplant
+
 ```mermaid
 flowchart LR
     User-->|Touchscreen| Raspberry 

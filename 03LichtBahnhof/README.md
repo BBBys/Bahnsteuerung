@@ -4,7 +4,7 @@
 
 Lichteffekte im Bahnhof
 
-- Neopixel-Kette
+- Neopixel-Kette 
   - Schalterhalle
   - Gaststätte
   - Wohnung
@@ -36,12 +36,18 @@ in Arbeit.
   - [ ] Anzeigetafel
   - [ ] Lautsprecher
   - [ ] Bodenplatte
-      - [ ] Vorplatz
-      - [ ] Parkplätze
-      - [ ] Fahrradständer
-      - [ ] Bushaltestelle
+    - [ ] Vorplatz
+    - [ ] Parkplätze
+    - [ ] Fahrradständer
+    - [ ] Bushaltestelle
     - [ ] Schilder
+
 ## Zeitlicher Ablauf
+
+## Details
+
+## Lichtsteuerung
+
 ## Quellen
 
 - Beispielprogramm für OLED-Display: Written by Limor Fried/Ladyada  
