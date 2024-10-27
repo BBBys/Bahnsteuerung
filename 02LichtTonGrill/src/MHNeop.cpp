@@ -2,7 +2,7 @@
  * @file MHNeop.cpp
  * @brief Lichterkette für Musikhaus
  * @version 1.1
- * @date 9 Okt 2024 14 4 3 Okt 29 28 Sep 2023
+ * @date 27 9 Okt 2024 14 4 3 Okt 29 28 Sep 2023
  *
  * @author Dr. Burkhard Borys, Zeller Ring 15, 34246 Vellmar, Deutschland
  * @copyright Copyright (c) 2023-2024 B. Borys
@@ -16,6 +16,7 @@ Adafruit_NeoPixel pixels(iNUMPIXELS, NEOPIXELPIN, NEO_GRB + NEO_KHZ800);
 /// Vorbereitung
 void um12()
 {
+   log_d("12 Uhr");
    pixels.clear(); // Set all pixel colors to 'off'
    pixels.show();  // Send the updated pixel colors to the hardware.
    Warte(random(BASISDELAY, BASISDELAY * 3));
@@ -24,10 +25,8 @@ void um12()
 }
 /// @brief um 12 Uhr gehen nacheinander 4 weiße Lampen an
 void um121()
-{/**
- * @brief 
- * 
- */
+{
+   log_d("um 12.1");
    if (!Warte())
       return;
    switch (Unterzst)

@@ -2,7 +2,7 @@
  * @file MHMqtt.cpp
  * @brief MQTT für Musikhaus
  * @version 1.1
- * @date 14 4 3 OKT 27 Sep 2023
+ * @date 27 14 4 3 OKT 27 Sep 2023
  *
  * @author Dr. Burkhard Borys, Zeller Ring 15, 34246 Vellmar, Deutschland
  * @copyright Copyright (c) 2023 B. Borys
@@ -36,18 +36,17 @@ EspMQTTClient client(
 void onConnectionEstablished()
 {
    log_d("onConnectionEstablished...");
-   client.subscribe("u/zeit", [](const String &payload)
+   client.subscribe("e/zeit", [](const String &payload)
                     {
                        u_int8_t pl;
-#ifndef NDEBUG                       
-                       Serial.println(payload);
-#endif                                              
+                        //log_d(payload);                                     
                        pl = payload.toInt();
                        //Zwischenzeiten abfangen
                        if (pl<12)
                        {
                         /* egal */
-                       }else //pl mindestens 12
+                       }
+                       else //pl mindestens 12
                        if (pl<15)
                        {
                         pl=12;

@@ -1,3 +1,14 @@
+/**
+ * @file MHMusik.cpp
+ * @brief Musik  in der Grillhütte
+ * @version 1.0
+ * @date 27 9 Okt 2024
+ * @note aus dem eBook EchoTrap : Die Idee, jemanden in einem unerwarteten 
+ * Klangerlebnis zu fangen der AZ-Delivery Vertriebs GmbH 2024.
+ * @author Dr. Burkhard Borys, Zeller Ring 15, 34246 Vellmar, Deutschland
+ * @copyright Copyright (c) 2024  B. Borys
+ */
+#ifdef MITAUDIO
 #include "Audio.h"
 #include "SD.h"
 #include "FS.h"
@@ -66,3 +77,4 @@ void audioloop()
     // Handle the audio playback
     audio.loop();
 }
+#endif

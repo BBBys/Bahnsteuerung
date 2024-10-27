@@ -1,3 +1,4 @@
+#ifdef MITAUDIO
 /*
  * Audio.cpp
  *
@@ -9,11 +10,11 @@
  *
  */
 #include "Audio.h"
-#include "aac_decoder/aac_decoder.h"
-#include "flac_decoder/flac_decoder.h"
-#include "mp3_decoder/mp3_decoder.h"
-#include "opus_decoder/opus_decoder.h"
-#include "vorbis_decoder/vorbis_decoder.h"
+//#include "aac_decoder/aac_decoder.h"
+//#include "flac_decoder/flac_decoder.h"
+//#include "mp3_decoder/mp3_decoder.h"
+//#include "opus_decoder/opus_decoder.h"
+//#include "vorbis_decoder/vorbis_decoder.h"
 
 //------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 AudioBuffer::AudioBuffer(size_t maxBlockSize) {
@@ -6341,3 +6342,4 @@ uint32_t Audio::getHighWatermark(){
     UBaseType_t highWaterMark = uxTaskGetStackHighWaterMark(m_audioTaskHandle);
     return highWaterMark; // dwords
 }
+#endif

@@ -2,10 +2,17 @@
  * @file main.cpp
  * @brief Musik und Partylicht in der Grillhütte
  * @version 1.1
- * @date 9 Okt 2024 14 4 3 2 Okt 29 26 Sep 2023
+ * @date 27 9 Okt 2024 14 4 3 2 Okt 29 26 Sep 2023
  * @author Dr. Burkhard Borys, Zeller Ring 15, 34246 Vellmar, Deutschland
  * @copyright Copyright (c) 2023-2024  B. Borys
  */
+#ifdef DEBUG
+#define DEBUG_PRINT(x) Serial.print(x)
+#define DEBUG_PRINTLN(x) Serial.println(x)
+#else
+#define DEBUG_PRINT(x)
+#define DEBUG_PRINTLN(x)
+#endif
 #include <Arduino.h>
 #include "Musikhaus.h"
 extern EspMQTTClient client;
@@ -23,6 +30,8 @@ void setup()
   log_d("begin...");
   pixels.begin(); // INITIALIZE NeoPixel strip object (REQUIRED)
   pixels.setBrightness(25);
+  pixels.setPixelColor(1, pixels.Color(255, 255, 255));
+  pixels.show(); // Send the updated pixel colors to the hardware.
   log_d("Neopixel Setup...fertig");
   delay(500);
 /// MQTT
@@ -39,7 +48,7 @@ void setup()
 
 void loop()
 {
-  client.loop();  //für MQTT
+    client.loop();  //für MQTT
   switch (Zustand)
   {
   case zuIni:
