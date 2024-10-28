@@ -13,7 +13,7 @@
 #include <EspMQTTClient.h>
 #include <Adafruit_NeoPixel.h>
 #include <Ticker.h> /// Load library "ticker" for blinking status led
-static const u_int8_t NEOPIXELPIN = 2, iNUMPIXELS = 12;
+static const u_int8_t NEOPIXELPIN = 0, iNUMPIXELS = 12;
 /**
  * @brief Farben als RGB-Werte
  */
@@ -52,7 +52,7 @@ void AnzeigenI(uint8_t pNummer, float pTemp);
 void Anzeigen2H(uint8_t pNummer, float pTempV, float pTempR);
 enum tZustande
 {
-    zuNull = 0,
+      zu0=0,zuNull = 0,
     zuIni, // Anfangszustand
     zu12,
     zu121,
@@ -61,21 +61,22 @@ enum tZustande
     zu151, // 15 Uhr langsame Musik
     zu19,
     zu191, // Disco
+    zu22,zu221,
     // für Unterzustände
     zu1,
     zu2,
     zu3,
     zuEnde
 };
+void um0();
+void um22();
 void um12();
 void um121();
 void um15();
 void um151();
 void um19();
 void um191();
-/**
- * Wartezeitverwaltung
- */
+
 void Warte(unsigned long t);
 bool Warte();
 #endif

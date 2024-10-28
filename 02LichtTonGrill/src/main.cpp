@@ -2,7 +2,7 @@
  * @file main.cpp
  * @brief Musik und Partylicht in der Grillhütte
  * @version 1.1
- * @date 27 9 Okt 2024 14 4 3 2 Okt 29 26 Sep 2023
+ * @date 28 27 9 Okt 2024 14 4 3 2 Okt 29 26 Sep 2023
  * @author Dr. Burkhard Borys, Zeller Ring 15, 34246 Vellmar, Deutschland
  * @copyright Copyright (c) 2023-2024  B. Borys
  */
@@ -25,12 +25,12 @@ extern Adafruit_NeoPixel pixels;
 void setup()
 {
 #ifndef NDEBUG
-  Serial.begin(115200);
+  Serial.begin(115200L);
 #endif
   log_d("begin...");
   pixels.begin(); // INITIALIZE NeoPixel strip object (REQUIRED)
   pixels.setBrightness(25);
-  pixels.setPixelColor(1, pixels.Color(255, 255, 255));
+  //pixels.setPixelColor(1, pixels.Color(255, 255, 255));
   pixels.show(); // Send the updated pixel colors to the hardware.
   log_d("Neopixel Setup...fertig");
   delay(500);
@@ -48,11 +48,9 @@ void setup()
 
 void loop()
 {
-    client.loop();  //für MQTT
+  client.loop(); // für MQTT
   switch (Zustand)
   {
-  case zuIni:
-    break;
   case zu12:
     um12();
     break;
@@ -71,7 +69,17 @@ void loop()
   case zu191:
     um191();
     break;
+  case zu22:
+    um22();
+    break;
+    case zuIni:
+    break;
+    case zuEnde:
+      break;
+  case zu0:
   default:
+    um0();
+    Zustand = zuIni;
     break;
   }
   delay(500);

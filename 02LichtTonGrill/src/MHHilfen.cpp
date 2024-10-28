@@ -2,9 +2,9 @@
  * @file MHHilfen.cpp
  * @brief Hilfen für Müspküavillon
  * @version 1.1
- * @date 14 4 Okt 26 Sep 2023
+ * @date 28 Okt 2024 14 4 Okt 26 Sep 2023
  * @author Dr. Burkhard Borys, Zeller Ring 15, 34246 Vellmar, Deutschland
- * @copyright Copyright (c) 2023 B. Borys
+ * @copyright Copyright (c) 2023-2024 B. Borys
  */
 #include "Musikhaus.h"
 uint8_t nFlip = 0, iLauf = 0;
@@ -38,10 +38,8 @@ double dmap(double x, double in_min, double in_max, double out_min, double out_m
 {
     return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
 }
-/**
- * Wartezeit in Sekunden initialisieren
- * @param t Wartezeit in Sekunden
- */
+/// @brief Wartezeit in Sekunden initialisieren
+/// @param t Wartezeit in Sekunden - wird in ms umgerechnet
 void Warte(unsigned long t)
 {
     //log_d("%uld", millis());

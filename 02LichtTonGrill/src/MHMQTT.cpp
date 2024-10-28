@@ -2,8 +2,7 @@
  * @file MHMqtt.cpp
  * @brief MQTT für Musikhaus
  * @version 1.1
- * @date 27 14 4 3 OKT 27 Sep 2023
- *
+ * @date 28 27 14 4 3 OKT 27 Sep 2023
  * @author Dr. Burkhard Borys, Zeller Ring 15, 34246 Vellmar, Deutschland
  * @copyright Copyright (c) 2023 B. Borys
  */
@@ -50,11 +49,19 @@ void onConnectionEstablished()
                        if (pl<15)
                        {
                         pl=12;
-                       }else //pl mindestens 15
-                       if (pl<19)
-                       {
-                        pl=15;
                        }
+                       else // pl mindestens 15
+                          if (pl < 19)
+                          {
+                             pl = 15;
+                          }
+                          else // pl mindestens 15
+                             if (pl < 22)
+                             {
+                                pl = 19;
+                             }
+                             else
+                                pl = 22;
                        switch (pl)
                        {
                        case 12:
@@ -66,7 +73,11 @@ void onConnectionEstablished()
                        case 19:
                           Zustand = zu19;
                           break;
+                       case 22:
+                          Zustand = zu22;
+                          break;
                        default:
+                          Zustand = zu0;
                           break;
                        }
                        // Anzeigen();

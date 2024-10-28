@@ -15,13 +15,17 @@ in Arbeit.
 
 - [x] grundlegender Code
 - [ ] LEDs schalten
+  - [x] Tanzfläche
+  - [ ] Grillkohle
 - [ ] SD-Karte
   - [ ] lesen
   - [ ] Ton und Musik ausgeben
 - [ ] MQTT
   - [x] MQTT-Aufbau
-  - [ ] WLAN
+  - [x] WLAN
   - [ ] MQTT-Ablaufsteuerung
+    - [x] Lichtprogramm
+    - [ ] Musikprogramm
 - [ ] Hardware
   - [ ] LED-Ring ankleben
   - [ ] LED in Grills
@@ -42,11 +46,11 @@ in Arbeit.
 title: "Beleuchtung"
 ---
 packet-beta
-  0-13: "aus"
-  14-17: "gedimmt weiß"
-  18-20: "farbig"
-  21-22: "Disco"
-  23-24: "Blues"
+  0-11: "aus"
+  12-14: "gedimmt weiß"
+  15-18: "farbig"
+  19-21: "Disco"
+  22-24: "Blues"
 ```
 
 ```mermaid
