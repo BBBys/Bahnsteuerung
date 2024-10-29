@@ -2,7 +2,7 @@
  * @file MHNeop.cpp
  * @brief Lichterkette für Musikhaus
  * @version 1.1
- * @date 28 27 9 Okt 2024 14 4 3 Okt 29 28 Sep 2023
+ * @date 29 28 27 9 Okt 2024 14 4 3 Okt 29 28 Sep 2023
  * @author Dr. Burkhard Borys, Zeller Ring 15, 34246 Vellmar, Deutschland
  * @copyright Copyright (c) 2023-2024 B. Borys
  */
@@ -16,6 +16,8 @@ void um0()
    log_d("0 Uhr Rücksetzen");
    pixels.clear(); // Set all pixel colors to 'off'
    pixels.show();  // Send the updated pixel colors to the hardware.
+   Grillfeuer.aus();
+   Eingangstafel.aus;
 }
 /// @brief um 12 Uhr beginnt das Programm
 /// Vorbereitung
@@ -65,6 +67,7 @@ void um121()
 /// zuerst mit einer Wartezeit von 5 bis 10 Minuten
 void um15()
 {
+   Grillfeuer.ein();
    log_d("um15");
    Warte(random(BASISDELAY, BASISDELAY * 2));
    Unterzst = zuIni;
@@ -73,6 +76,8 @@ void um15()
 /// @brief 19 Uhr: Wartezeit 5 bis 10 Minuten
 void um19()
 {
+   Grillfeuer.ein();
+   Eingangstafel.ein();
    pixels.setPixelColor(1, pixels.Color(255, 0, 255));
    pixels.setPixelColor(4, pixels.Color(255, 255, 0));
    pixels.setPixelColor(7, pixels.Color(0, 255, 255));
@@ -93,6 +98,7 @@ void um191()
        {HUECYAN, HUEGELB, HUEGRUEN, HUEMAGENTA, HUEROT2};
    if (!Warte())
       return;
+   Grillfeuer.loop();
    switch (Unterzst)
    {
    case zuIni: // erst mal bunt
@@ -154,6 +160,7 @@ void um151()
    unsigned static int hue;
    if (!Warte())
       return;
+   Grillfeuer.loop();
    log_d("um 151 u=%d", Unterzst);
    switch (Unterzst)
    {
@@ -179,11 +186,19 @@ void um151()
    {
       unsigned static int hue;
       if (!Warte())         return;
-switch (random(3))
-{
-case 0:   hue = HUEGRUEN;   break;
-case 1:   hue = HUEBLAU;   break;
-case 2:default:   hue = HUEMAGENTA;   break;
+      Grillfeuer.aus();
+      switch (random(3))
+      {
+      case 0:
+         hue = HUEGRUEN;
+         break;
+      case 1:
+         hue = HUEBLAU;
+         break;
+      case 2:
+      default:
+         hue = HUEMAGENTA;
+         break;
 }
 log_d("22 Uhr %d", hue);
 pixels.fill(pixels.ColorHSV(hue), 0, 12);
