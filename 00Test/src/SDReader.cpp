@@ -60,26 +60,24 @@ void sdsetup()
     Serial.print("Bytes    :         ");
     Serial.println(SD.totalBytes());
     Serial.print("KBytes   :         ");
-    Serial.println((SD.totalBytes())>>10);
+    Serial.println((SD.totalBytes()) >> 10);
     Serial.print("MBytes   :         ");
     Serial.println((SD.totalBytes()) >> 20);
     Serial.print("GBytes   :         ");
     Serial.println((SD.totalBytes()) >> 30);
 
     File root = SD.open("/");
-    root.printf("hallo");
+    //root.printf("hallo");
     File file = root.openNextFile();
     while (file)
     {
         if (file.isDirectory())
             log_i("Directory");
-            else if(String(file.name()).endsWith(".mp3")            )
-                log_i("mp3");
-            log_i("gefunden %s" ,String(file.name()));
-        }
-        log_i("gesamt ");
-        file = root.openNextFile();
-        log_i("%d", mp3Files.size());
+        else 
+        log_i("gefunden %s", String(file.name()));
+     file = root.openNextFile(); }
+    log_i("gesamt ");
+      log_i("%d", mp3Files.size());
 }
 
 void sdloop(void)

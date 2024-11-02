@@ -16,15 +16,19 @@ void setup()
 {
 #ifndef NDEBUG
   Serial.begin(115200L);
+  while(!Serial.available()) { ; }
+  Serial.readStringUntil('.');
 #endif
   log_d("begin...");
   sdsetup();
+  tonsetup();
   // ledsetup();
   log_d("...Setup ok");
 }
 
 void loop()
 {
+  tonloop();
   sdloop();
   //ledloop();
 }

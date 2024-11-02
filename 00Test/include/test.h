@@ -11,6 +11,8 @@
 #define TEST_H
 void ledsetup();
 void ledloop();
+void tonsetup();
+void tonloop();
 void sdsetup();
 void sdloop();
 int LedHelligkeit(int wert);
