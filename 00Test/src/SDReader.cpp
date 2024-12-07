@@ -3,7 +3,7 @@
  * @brief Test SD-Reader
  * basiert auf Echo Trap von AZ-Delivery
  * @version 1.1
- * @date 1 Nov 29 Okt 2024
+ * @date 6 1 Nov 29 Okt 2024
  * @author Dr. Burkhard Borys, Zeller Ring 15, 34246 Vellmar, Deutschland
  * @copyright Copyright (c) 2024  B. Borys
  */
@@ -26,11 +26,7 @@
 #define SPI_MISO 19
 #define SPI_SCK 18
 std::vector<String> mp3Files;
-volatile bool playAudio = false;
-void IRAM_ATTR onMotionDetected()
-{
-    playAudio = true;
-}
+//volatile bool playAudio = false;
 
 // change this to match your SD shield or module;
 // Arduino Ethernet shield: pin 4
@@ -49,25 +45,33 @@ void sdsetup()
     SPI.begin(SPI_SCK, SPI_MISO, SPI_MOSI);
     if (!SD.begin(SD_CS))
     {
-        Serial.println("SD Fehler");
+        log_e("SD Fehler");
         return;
     }
     log_i("SD OK");
-    Serial.print("Card type:         ");
-    Serial.println(SD.cardType());
-    Serial.print("Size     :         ");
-    Serial.println(SD.cardSize());
-    Serial.print("Bytes    :         ");
-    Serial.println(SD.totalBytes());
-    Serial.print("KBytes   :         ");
-    Serial.println((SD.totalBytes()) >> 10);
-    Serial.print("MBytes   :         ");
-    Serial.println((SD.totalBytes()) >> 20);
-    Serial.print("GBytes   :         ");
-    Serial.println((SD.totalBytes()) >> 30);
+    //File x = SD.open("/x.txt", "w", true);
+    //x.printf("hallo");
+    File x = SD.open("/x.txt", "r", false);
+    String s = x.readString();
+    log_i("..%s..",s);
+    x.close();
+    
+    /*    Serial.print("Card type:         ");
+        Serial.println(SD.cardType());
+        Serial.print("Size     :         ");
+        Serial.println(SD.cardSize());
+        Serial.print("MBytes   :         ");
+        Serial.println((SD.totalBytes()) >> 20);
+        Serial.print("Sectors  :         ");
+        Serial.println(SD.numSectors());
+        Serial.print("Sectorsiz:         ");
+        Serial.println(SD.sectorSize());
+        Serial.print("used     :         ");
+        Serial.println(SD.usedBytes());*/
 
     File root = SD.open("/");
     //root.printf("hallo");
+    
     File file = root.openNextFile();
     while (file)
     {
@@ -76,8 +80,6 @@ void sdsetup()
         else 
         log_i("gefunden %s", String(file.name()));
      file = root.openNextFile(); }
-    log_i("gesamt ");
-      log_i("%d", mp3Files.size());
 }
 
 void sdloop(void)
