@@ -1,11 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 18
-VisualStudioVersion = 18.4.11612.150 stable
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bahnsteuerung", "Bahnsteuerung\Bahnsteuerung.csproj", "{DE688CBE-5479-4048-8608-E7514B9E4E07}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Steuerprogramm", "Bahn\Bahn\Steuerprogramm.csproj", "{E40BC4B3-FF1D-4FF4-94A0-E58357A4449B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Steuerprogramm", "Bahn\Steuerprogramm.csproj", "{E40BC4B3-FF1D-4FF4-94A0-E58357A4449B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,10 +11,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{DE688CBE-5479-4048-8608-E7514B9E4E07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DE688CBE-5479-4048-8608-E7514B9E4E07}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DE688CBE-5479-4048-8608-E7514B9E4E07}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DE688CBE-5479-4048-8608-E7514B9E4E07}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E40BC4B3-FF1D-4FF4-94A0-E58357A4449B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E40BC4B3-FF1D-4FF4-94A0-E58357A4449B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E40BC4B3-FF1D-4FF4-94A0-E58357A4449B}.Release|Any CPU.ActiveCfg = Release|Any CPU
