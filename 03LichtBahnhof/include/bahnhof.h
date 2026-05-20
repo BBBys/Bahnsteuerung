@@ -1,17 +1,36 @@
-enum tZustande
+/**
+ * @file Bahnhof.h
+ * @author BBB
+ * @brief Bahnhof-Beleuchtungssteuerung
+ * @version 0.2
+ * @date 7 5 Nov 2021
+ * 
+ * @copyright Copyright (c) 2021
+ * 
+ */
+#ifndef _bahnhof_h
+#define _bahnhof_h
+
+#include <Arduino.h>
+#include <licht.h>
+enum Pixelnummern
 {
-    zuNull = 0,
-    zuIni, // Anfangszustand
-    zu12,
-    zu121,
-    zu12e, // 12 Uhr: Putzlicht
-    zu15,
-    zu151, // 15 Uhr langsame Musik
-    zu19,
-    zu191, // Disco
-    // für Unterzustände
-    zu1,
-    zu2,
-    zu3,
-    zuEnde
+    pxHalle2,
+    pxHalle1,
+    pxSchalterhalle,
+    pxGaststaette,
+    pxWohnzimmer,
+    pxKueche,
+    nPixel
 };
+enum LichtAnZeiten
+{
+    lazKueche,
+    lazWerkstatt,
+    lazVerkauf,
+    lazWohnzimmer,
+    lazWirtschaft
+};
+bool LichtSollAn(uint8_t Stunde,LichtAnZeiten Art);
+
+#endif // _bahnhof_h
