@@ -1,7 +1,18 @@
-# Bahnsteuerung
+# Projektmappe Bahnsteuerung
+Kern: 
+-	Ein Raspberry-Touchscreen-Programm zur Steuerung der Anlage.
 
-Steuerung einer Märklin-Modelleisenbahn
-unter Verwendung der / oder in Anlehnung an Routinen aus dem [CANguru-System](https://github.com/CANguru-System)
+Darum herum: Verschiedene Ansätze und Testprogramme, auch zur Steuerung einzelner Bestandteile 
+(Häuser, Beleuchtung, ...) der Anlage.
+
+Unter anderem
+- Bahnsteuerung
+- Steuerprogramm
+- PMqttServer
+- PMqttBroker
+- PTouch
+
+Alles unter Verwendung der / oder in Anlehnung an Routinen aus dem [CANguru-System](https://github.com/CANguru-System)
 
 ## Änderungen zum Original
 
@@ -12,7 +23,8 @@ unter Verwendung der / oder in Anlehnung an Routinen aus dem [CANguru-System](ht
 
 ## Struktur
 
-> [!Note] geplant
+> [!Note] 
+> geplant
 
 ```mermaid
 flowchart LR
@@ -29,3 +41,25 @@ flowchart LR
     ESP32-Steuerungen-->Bahnhofsbeleuchtung
   
 ```
+## global
+- Namespace Borys.Bahn.Bahnsteuerung
+# Projektmappe Bahnsteuerung
+enthält
+- PTouch: Programm für den 800x480-Touchscreen
+- Bahnsteuerung: Testprogramm, um CAN-Befehle zusammenzustellen und zu zu senden
+- Steuerprogramm: Testprogramm, um Loks mit ihren Funktionen anzusprechen und CAN-Befehle zu senden
+- MQTT-Tests
+# LichtBurg
+Beleuchtung der Burgruine und Szenario *Geisterstunde*
+# LichtTonGrill
+Beleuchtung und Musik für die Grillhütte
+# LichtBahnhof
+Beleuchtung Bahnhofsgebäude und Bahnsteig
+# Anzeigetafel
+... für den Bahnhof
+# Uhr
+... für den Bahnhof
+# Förderturm
+Motor und Lichteffekte
+# Gasthaus
+Beleuchtung für den Berggasthof und Aufzug im Aussichtsturm
