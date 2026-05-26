@@ -1,13 +1,6 @@
 ﻿using Borys.Bahn.Steuerprogramm.Properties;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO.Ports;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Borys.Bahn.Steuerprogramm
@@ -46,7 +39,7 @@ namespace Borys.Bahn.Steuerprogramm
       {
         spArduino.DiscardInBuffer();
         spArduino.DiscardOutBuffer();
-        spArduino.Close(); 
+        spArduino.Close();
       }
 
     }
@@ -85,9 +78,12 @@ namespace Borys.Bahn.Steuerprogramm
             if (teile[4].Equals("00"))
             {
               aus = "System: ";
-              if (teile[10].Equals("00")) aus += "STOP";
-              else if (teile[10].Equals("01")) aus += "GO";
-              else aus += teile[10];
+              if (teile[10].Equals("00"))
+                aus += "STOP";
+              else if (teile[10].Equals("01"))
+                aus += "GO";
+              else
+                aus += teile[10];
 
             }
             else if (teile[4].Equals("04"))
@@ -103,10 +99,12 @@ namespace Borys.Bahn.Steuerprogramm
             }
             FBahn.FMeldung.Add(aus);
           }
-          else FBahn.FMeldung.Add(zeile);
+          else
+            FBahn.FMeldung.Add(zeile);
 
         }
-        else FBahn.FMeldung.Add("(leer)");
+        else
+          FBahn.FMeldung.Add("(leer)");
       }
     }
 

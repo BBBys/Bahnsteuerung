@@ -1,15 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Borys.Bahn.Steuerprogramm.Properties;
+﻿using Borys.Bahn.Steuerprogramm.Properties;
+using System;
 using System.IO.Ports;
-using Borys.Bahn.Steuerprogramm;
+using System.Windows.Forms;
 
 namespace Borys.Bahn.Steuerprogramm
 {
@@ -26,7 +18,7 @@ namespace Borys.Bahn.Steuerprogramm
 
       Text = Properties.Resources.ComportFenstertitel;
 #if DEBUG
-            Text += " DEBUG";
+      Text += " DEBUG";
 #else
       Text += Application.CompanyName + ": " + Application.ProductName;
 #endif
@@ -40,7 +32,8 @@ namespace Borys.Bahn.Steuerprogramm
       }
       cbPort.EndUpdate();
       cbPort.Text = sPort;
-      cbSpeed.Text = sSpeed.ToString(); ;
+      cbSpeed.Text = sSpeed.ToString();
+      ;
     }
 
     private void cbPort_SelectedIndexChanged(object sender, EventArgs e)
@@ -57,7 +50,7 @@ namespace Borys.Bahn.Steuerprogramm
 
     private void bSchliessen_Click(object sender, EventArgs e)
     {
-  Hide();
+      Hide();
     }
 
     private void fComport_FormClosing(object sender, FormClosingEventArgs e)
@@ -108,7 +101,7 @@ namespace Borys.Bahn.Steuerprogramm
 
     private void fComport_Activated(object sender, EventArgs e)
     {
-   lMeldung.Text = string.Empty;
+      lMeldung.Text = string.Empty;
       errorProvider1.SetError(bVerbinden, string.Empty);
       CheckOpen();
     }

@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq;
 using System.Windows.Forms;
 
 namespace Borys.Bahn.Steuerprogramm
@@ -13,7 +6,7 @@ namespace Borys.Bahn.Steuerprogramm
 
   public partial class fBMeldung : Form
   {
- //   private readonly Properties.Settings Props;
+    //   private readonly Properties.Settings Props;
     // This delegate enables asynchronous calls for setting
     // the text property on a TextBox control.
     delegate void dText(string text);

@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace Borys.Bahn.Bahnsteuerung
+namespace Borys.Bahsteuerung.PTouch
 {
-  static class Program
+  internal static class Program
   {
     /// <summary>
     /// Der Haupteinstiegspunkt für die Anwendung.
@@ -13,7 +13,7 @@ namespace Borys.Bahn.Bahnsteuerung
     {
       Application.EnableVisualStyles();
       Application.SetCompatibleTextRenderingDefault(false);
-      Application.Run(new fBSMain());
+      Application.Run(new FTMain());
     }
   }
 }

@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Drawing;
-using System.IO.Ports;
 using System.Windows.Forms;
 
 namespace Borys.Bahn.Steuerprogramm
@@ -8,13 +6,13 @@ namespace Borys.Bahn.Steuerprogramm
   public partial class fBMain : Form
   {
     //private readonly Properties.Settings Props;
- private   fComport ComFenster;
-internal    fBMeldung FMeldung;
+    private fComport ComFenster;
+    internal fBMeldung FMeldung;
     private fBLok FLok1, FLok2, FLok3;
     private fBSystem FSystem;
     private readonly int RAND = 20;
     private fKommando FKommando;
-    
+
     public fBMain()
     {
       InitializeComponent();
@@ -24,7 +22,7 @@ internal    fBMeldung FMeldung;
 #else
             Text += Application.CompanyName + ": " + Application.ProductName;
 #endif
-    
+
       FMeldung = new fBMeldung();
       FMeldung.MdiParent = this;
       FMeldung.Show();
@@ -61,12 +59,12 @@ internal    fBMeldung FMeldung;
 
     }
 
-    internal  void StatusMeldung(string v)
+    internal void StatusMeldung(string v)
     {
       tslMeldung.Text = v;
     }
 
-  
+
     private void toolStripButton1_Click(object sender, EventArgs e)
     {
       Close();
@@ -86,7 +84,7 @@ internal    fBMeldung FMeldung;
 
     private void tsbTest_Click(object sender, EventArgs e)
     {
-   
+
 
     }
 
@@ -98,12 +96,12 @@ internal    fBMeldung FMeldung;
     private void fBMain_FormClosing(object sender, FormClosingEventArgs e)
     {
       FKommando.PortClose();
-      
+
       tslMeldung.Text = "Port geschlossen";
       //Props.Save();
     }
 
- 
+
     private void fBMain_Resize(object sender, EventArgs e)
     {
       int w, h, w3, h3;
@@ -119,9 +117,9 @@ internal    fBMeldung FMeldung;
       FLok2.Left = w3;
       FLok3.Left = 2 * w3;
       FMeldung.Left = 2 * w3;
-      FSystem.Top = FMeldung.Top=FKommando.Top = h3;
-      FSystem.Width = FMeldung.Width =FKommando.Width= w3 - RAND;
-      FSystem.Height = FMeldung.Height =FKommando.Height= h3 - RAND;
+      FSystem.Top = FMeldung.Top = FKommando.Top = h3;
+      FSystem.Width = FMeldung.Width = FKommando.Width = w3 - RAND;
+      FSystem.Height = FMeldung.Height = FKommando.Height = h3 - RAND;
       FSystem.Left = 0;
       FKommando.Left = w3;
       FMeldung.Left = 2 * w3;
