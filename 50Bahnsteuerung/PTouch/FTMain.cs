@@ -2,10 +2,11 @@
 using System;
 using System.Windows.Forms;
 
-namespace Borys.Bahsteuerung.PTouch
+namespace Borys.Bahn.Bahnsteuerung.PTouch
 {
   public partial class FTMain : Form
   {
+    FTUmwelt fUmwelt = new FTUmwelt();
     public FTMain()
     {
       InitializeComponent();
@@ -22,6 +23,11 @@ namespace Borys.Bahsteuerung.PTouch
     private void button4_Click(object sender, EventArgs e)
     {
       Close();
+    }
+
+    private void bUmwelt_Click(object sender, EventArgs e)
+    {
+      fUmwelt.ShowDialog();
     }
   }
 }

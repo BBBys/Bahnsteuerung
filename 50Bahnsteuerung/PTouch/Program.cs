@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace Borys.Bahsteuerung.PTouch
+namespace Borys.Bahn.Bahnsteuerung.PTouch
 {
   internal static class Program
   {

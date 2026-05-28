@@ -73,10 +73,19 @@
     <Compile Include="FTMain.Designer.cs">
       <DependentUpon>FTMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="FTUmwelt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FTUmwelt.Designer.cs">
+      <DependentUpon>FTUmwelt.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FTMain.resx">
       <DependentUpon>FTMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FTUmwelt.resx">
+      <DependentUpon>FTUmwelt.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
