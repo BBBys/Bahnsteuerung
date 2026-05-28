@@ -1,0 +1,9 @@
+/// <summary>
+  /// Icons:
+  /// <a href="https://www.flaticon.com/de/kostenlose-icons/aufgaben" title="aufgaben Icons">Aufgaben Icons erstellt von Freepik - Flaticon</a>
+  /// <a href="https://www.flaticon.com/de/kostenlose-icons/config" title="config Icons">Config Icons erstellt von srip - Flaticon</a>
+  /// <a href="https://www.flaticon.com/free-icons/leader" title="leader icons">Leader icons created by Freepik - Flaticon</a>
+  /// <a href="https://www.flaticon.com/free-icons/switch" title="switch icons">Switch icons created by Freepik - Flaticon</a>
+  /// <a href="https://www.flaticon.com/free-icons/emergency-stop" title="emergency stop icons">Emergency stop icons created by Smashicons - Flaticon</a>
+  /// <a href="https://www.flaticon.com/de/kostenlose-icons/signalisierung" title="signalisierung Icons">Signalisierung Icons erstellt von Freepik - Flaticon</a>
+  /// </summary>
