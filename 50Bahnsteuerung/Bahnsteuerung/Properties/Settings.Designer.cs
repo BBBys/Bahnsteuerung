@@ -12,7 +12,7 @@ namespace Borys.Bahn.Bahnsteuerung.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "14.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "18.6.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -25,25 +25,22 @@ namespace Borys.Bahn.Bahnsteuerung.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("COM21")]
-        public string Comport {
+        [global::System.Configuration.DefaultSettingValueAttribute("192.168.1.46")]
+        public string IPCANBRIDGE {
             get {
-                return ((string)(this["Comport"]));
+                return ((string)(this["IPCANBRIDGE"]));
             }
             set {
-                this["Comport"] = value;
+                this["IPCANBRIDGE"] = value;
             }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("9600")]
-        public int Comrate {
+        [global::System.Configuration.DefaultSettingValueAttribute("200")]
+        public int BUTTONSIZE {
             get {
-                return ((int)(this["Comrate"]));
-            }
-            set {
-                this["Comrate"] = value;
+                return ((int)(this["BUTTONSIZE"]));
             }
         }
     }

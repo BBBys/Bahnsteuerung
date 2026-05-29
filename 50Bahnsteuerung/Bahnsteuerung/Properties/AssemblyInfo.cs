@@ -2,36 +2,37 @@
 using System.Resources;
 using System.Runtime.InteropServices;
 
-// Allgemeine Informationen über eine Assembly werden über die folgenden 
+// Allgemeine Informationen über eine Assembly werden über die folgenden
 // Attribute gesteuert. Ändern Sie diese Attributwerte, um die Informationen zu ändern,
-// die mit einer Assembly verknüpft sind.
+// die einer Assembly zugeordnet sind.
 [assembly: AssemblyTitle("Bahnsteuerung")]
-[assembly: AssemblyDescription("Interface zur Steuerung")]
+[assembly: AssemblyDescription("Steuerung über CANguru an CAN-Bus")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Borys Vellmar")]
+[assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("Bahnsteuerung")]
-[assembly: AssemblyCopyright("Copyright ©  2015-2016 B. Borys")]
-[assembly: AssemblyTrademark("Bahn")]
+[assembly: AssemblyCopyright("Copyright ©  2022")]
+[assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
-// Durch Festlegen von ComVisible auf "false" werden die Typen in dieser Assembly unsichtbar 
-// für COM-Komponenten.  Wenn Sie auf einen Typ in dieser Assembly von 
-// COM zugreifen müssen, legen Sie das ComVisible-Attribut für diesen Typ auf "true" fest.
+// Durch Festlegen von ComVisible auf FALSE werden die Typen in dieser Assembly
+// für COM-Komponenten unsichtbar.  Wenn Sie auf einen Typ in dieser Assembly von
+// COM aus zugreifen müssen, sollten Sie das ComVisible-Attribut für diesen Typ auf "True" festlegen.
 [assembly: ComVisible(false)]
 
 // Die folgende GUID bestimmt die ID der Typbibliothek, wenn dieses Projekt für COM verfügbar gemacht wird
-[assembly: Guid("120505d2-8d83-4621-b88a-7759dc4f76cb")]
+[assembly: Guid("34cd8165-a03a-42e8-81a9-b15a9a7594be")]
 
 // Versionsinformationen für eine Assembly bestehen aus den folgenden vier Werten:
 //
 //      Hauptversion
-//      Nebenversion 
+//      Nebenversion
 //      Buildnummer
 //      Revision
 //
-// Sie können alle Werte angeben oder die standardmäßigen Build- und Revisionsnummern 
+// Sie können alle Werte angeben oder Standardwerte für die Build- und Revisionsnummern verwenden,
 // übernehmen, indem Sie "*" eingeben:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("2.0.0.0")]
-[assembly: AssemblyFileVersion("2.0.0.0")]
-[assembly: NeutralResourcesLanguageAttribute("de-DE")]
+[assembly: AssemblyVersion("2.0.0.2")]
+[assembly: AssemblyFileVersion("2.0.0.2")]
+[assembly: NeutralResourcesLanguage("de")]
+

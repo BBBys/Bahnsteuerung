@@ -12,7 +12,7 @@ namespace Borys.Bahn.Bahnsteuerung.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.9.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "14.0.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -25,22 +25,25 @@ namespace Borys.Bahn.Bahnsteuerung.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("192.168.1.46")]
-        public string IPCANBRIDGE {
+        [global::System.Configuration.DefaultSettingValueAttribute("COM21")]
+        public string Comport {
             get {
-                return ((string)(this["IPCANBRIDGE"]));
+                return ((string)(this["Comport"]));
             }
             set {
-                this["IPCANBRIDGE"] = value;
+                this["Comport"] = value;
             }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("200")]
-        public int BUTTONSIZE {
+        [global::System.Configuration.DefaultSettingValueAttribute("9600")]
+        public int Comrate {
             get {
-                return ((int)(this["BUTTONSIZE"]));
+                return ((int)(this["Comrate"]));
+            }
+            set {
+                this["Comrate"] = value;
             }
         }
     }

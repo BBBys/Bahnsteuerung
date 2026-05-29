@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" GroupingSetting="Access">
+  <Class Name="Borys.Bahn.Bahnsteuerung.cBusObjekt">
+    <Position X="0.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAQAAAAAAAAAAAAAQAAAAAA=</HashCode>
+      <FileName>BusObjekt.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Borys.Bahn.Bahnsteuerung.cLok">
+    <Position X="2.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAACAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>cLok.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Borys.Bahn.Bahnsteuerung.fBSMain" Collapsed="true">
+    <Position X="3" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AASSBAAEEDAwAIIQAsCAAAETggEIAAAAgGAAQAhEBAE=</HashCode>
+      <FileName>fBSMain.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Borys.Bahn.Bahnsteuerung.cLoks" Collapsed="true">
+    <Position X="4.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAAAGAAAAAAAAAAAAAAACAAAAAAAAAAAAA=</HashCode>
+      <FileName>cLoks.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Borys.Bahn.Bahnsteuerung.cCmd">
+    <Position X="8.25" Y="0.5" Width="1.5" />
+    <NestedTypes>
+      <Struct Name="Borys.Bahn.Bahnsteuerung.cCmd.StartbitUndBefehl" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>cCmd.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Struct>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAACQAAAAAAAAAAAQAAAAAAAAAAgAAAAAEAAA=</HashCode>
+      <FileName>cCmd.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Borys.Bahn.Bahnsteuerung.cCmds" Collapsed="true">
+    <Position X="6.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAGAAAAAAAAAAAAABACAAAAAAAAAAAAA=</HashCode>
+      <FileName>cCmds.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -5,22 +5,17 @@ namespace Borys.Bahn.Bahnsteuerung
   /// <summary>
   /// Objekt auf dem Buss, das eine eigene Adresse hat
   /// </summary>
-  class cBusObjekt : Object
+  public class cBusObjekt : Object
   {
-    /// <summary>
-    /// Adresse auf dem Bus
-    /// </summary>
-    protected uint _adresse;
 
-    public uint Adresse
-    {
-      get { return _adresse; }
-      //           protected set { _adresse = value; } wird nie verwendet
-    }
+    private uint adresse;
+
     /// <summary>
     /// Name des Bus-Objekts
     /// </summary>
-    protected string Name;
+    private string name;
 
+    public uint Adresse { get => adresse; set => adresse = value; }
+    public string Name { get => name; set => name = value; }
   }
 }

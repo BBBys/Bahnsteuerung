@@ -3,10 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 18
 VisualStudioVersion = 18.4.11612.150
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bahnsteuerung", "Bahnsteuerung\Bahnsteuerung.csproj", "{DE688CBE-5479-4048-8608-E7514B9E4E07}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Steuerprogramm", "Bahn\Bahn\Steuerprogramm.csproj", "{E40BC4B3-FF1D-4FF4-94A0-E58357A4449B}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PMqttBroker", "PMqttBroker\PMqttBroker.csproj", "{6F91569E-FBA8-47A3-A189-967203D70010}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PMqttServer", "PMqttServer\PMqttServer.csproj", "{3C1C53F3-0FFE-4C91-A521-F61828064DC9}"
@@ -18,20 +14,18 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Projektmappenelemente", "Pr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PTouch", "PTouch\PTouch.csproj", "{34A04E1A-D58F-4E1E-9301-B5506703EE03}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestBahnsteuerung", "TestBahnsteuerung\TestBahnsteuerung.csproj", "{DE688CBE-5479-4048-8608-E7514B9E4E07}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bahnsteuerung", "Bahnsteuerung\Bahnsteuerung.csproj", "{34CD8165-A03A-42E8-81A9-B15A9A7594BE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Steuerprogramm", "Steuerprogramm\Steuerprogramm.csproj", "{E40BC4B3-FF1D-4FF4-94A0-E58357A4449B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{DE688CBE-5479-4048-8608-E7514B9E4E07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DE688CBE-5479-4048-8608-E7514B9E4E07}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DE688CBE-5479-4048-8608-E7514B9E4E07}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DE688CBE-5479-4048-8608-E7514B9E4E07}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E40BC4B3-FF1D-4FF4-94A0-E58357A4449B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E40BC4B3-FF1D-4FF4-94A0-E58357A4449B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E40BC4B3-FF1D-4FF4-94A0-E58357A4449B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E40BC4B3-FF1D-4FF4-94A0-E58357A4449B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6F91569E-FBA8-47A3-A189-967203D70010}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6F91569E-FBA8-47A3-A189-967203D70010}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6F91569E-FBA8-47A3-A189-967203D70010}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -44,6 +38,18 @@ Global
 		{34A04E1A-D58F-4E1E-9301-B5506703EE03}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{34A04E1A-D58F-4E1E-9301-B5506703EE03}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{34A04E1A-D58F-4E1E-9301-B5506703EE03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE688CBE-5479-4048-8608-E7514B9E4E07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE688CBE-5479-4048-8608-E7514B9E4E07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE688CBE-5479-4048-8608-E7514B9E4E07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE688CBE-5479-4048-8608-E7514B9E4E07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34CD8165-A03A-42E8-81A9-B15A9A7594BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34CD8165-A03A-42E8-81A9-B15A9A7594BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34CD8165-A03A-42E8-81A9-B15A9A7594BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34CD8165-A03A-42E8-81A9-B15A9A7594BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E40BC4B3-FF1D-4FF4-94A0-E58357A4449B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E40BC4B3-FF1D-4FF4-94A0-E58357A4449B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E40BC4B3-FF1D-4FF4-94A0-E58357A4449B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E40BC4B3-FF1D-4FF4-94A0-E58357A4449B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

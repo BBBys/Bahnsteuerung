@@ -1,4 +1,5 @@
-﻿using Borys.Bahn.CANguru.Com;
+﻿using System.Configuration;
+using Borys.Bahn.CANguru.Com;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -183,7 +184,7 @@ namespace Borys.Bahn.Bahnsteuerung
     }
 
 
-    private void button1_Click(object sender, EventArgs e) => Close();
+    private void bCloseClick(object sender, EventArgs e) => Close();
 
 
     private void bInit_Click(object sender, EventArgs e)
@@ -270,6 +271,11 @@ namespace Borys.Bahn.Bahnsteuerung
           reader.Close();
         }
       }
+    }
+
+    private void fMain_Shown(object sender, EventArgs e)
+    {
+      tslZeit.Text = DateTime.Now.ToString();
     }
   }
 }
