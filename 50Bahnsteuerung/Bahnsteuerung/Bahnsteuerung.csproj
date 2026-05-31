@@ -87,6 +87,7 @@
   <ItemGroup>
     <Compile Include="BusObjekt.cs" />
     <Compile Include="CANKonstanten.cs" />
+    <Compile Include="cAnlagenZeit.cs" />
     <Compile Include="CANVerbindung.cs" />
     <Compile Include="cLok.cs" />
     <Compile Include="fFahren.cs">

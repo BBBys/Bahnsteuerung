@@ -113,6 +113,16 @@ namespace Borys.Bahn.Bahnsteuerung.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap einstellung {
+            get {
+                object obj = ResourceManager.GetObject("einstellung", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap emergency_stop {
             get {
                 object obj = ResourceManager.GetObject("emergency-stop", resourceCulture);
@@ -155,6 +165,16 @@ namespace Borys.Bahn.Bahnsteuerung.Properties {
         internal static System.Drawing.Bitmap Roco_72478_BR_212_001_2_DR {
             get {
                 object obj = ResourceManager.GetObject("Roco_72478_BR_212_001_2_DR", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap steuerungHäuser {
+            get {
+                object obj = ResourceManager.GetObject("steuerungHäuser", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

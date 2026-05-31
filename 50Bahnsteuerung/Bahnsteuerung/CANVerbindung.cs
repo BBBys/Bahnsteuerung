@@ -7,8 +7,8 @@ using System.Windows.Forms;
 namespace Borys.Bahn.CANguru.Com
 {
   /// <summary>
-  /// alles, was die VErbindung zum CAN-Bus braucht.
-  /// Vrbindung wird mit dem Konstruktor aufgebaut
+  /// alles, was die Verbindung zum CAN-Bus braucht.
+  /// Verbindung wird mit dem Konstruktor aufgebaut
   /// </summary>
   public partial class cCANVerbindung : IDisposable
   {

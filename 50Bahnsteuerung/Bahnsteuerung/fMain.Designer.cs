@@ -36,12 +36,14 @@
       this.statusStrip1 = new System.Windows.Forms.StatusStrip();
       this.tslZeit = new System.Windows.Forms.ToolStripStatusLabel();
       this.tlp1 = new System.Windows.Forms.TableLayoutPanel();
-      this.bInit = new System.Windows.Forms.Button();
-      this.bFahren = new System.Windows.Forms.Button();
-      this.bStop = new System.Windows.Forms.Button();
-      this.bConfig = new System.Windows.Forms.Button();
-      this.bSchalten = new System.Windows.Forms.Button();
+      this.button4 = new System.Windows.Forms.Button();
       this.bClose = new System.Windows.Forms.Button();
+      this.bStop = new System.Windows.Forms.Button();
+      this.bSchalten = new System.Windows.Forms.Button();
+      this.bConfig = new System.Windows.Forms.Button();
+      this.bFahren = new System.Windows.Forms.Button();
+      this.bInit = new System.Windows.Forms.Button();
+      this.bHäuser = new System.Windows.Forms.Button();
       this.statusStrip1.SuspendLayout();
       this.tlp1.SuspendLayout();
       this.SuspendLayout();
@@ -66,14 +68,17 @@
       // 
       // tlp1
       // 
-      this.tlp1.ColumnCount = 3;
-      this.tlp1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
-      this.tlp1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
-      this.tlp1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
-      this.tlp1.Controls.Add(this.bClose, 2, 1);
+      this.tlp1.ColumnCount = 4;
+      this.tlp1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+      this.tlp1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+      this.tlp1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+      this.tlp1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+      this.tlp1.Controls.Add(this.bHäuser, 2, 0);
+      this.tlp1.Controls.Add(this.button4, 2, 1);
+      this.tlp1.Controls.Add(this.bClose, 3, 1);
+      this.tlp1.Controls.Add(this.bStop, 3, 0);
       this.tlp1.Controls.Add(this.bSchalten, 1, 1);
       this.tlp1.Controls.Add(this.bConfig, 0, 1);
-      this.tlp1.Controls.Add(this.bStop, 2, 0);
       this.tlp1.Controls.Add(this.bFahren, 1, 0);
       this.tlp1.Controls.Add(this.bInit, 0, 0);
       this.tlp1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -85,37 +90,37 @@
       this.tlp1.Size = new System.Drawing.Size(800, 428);
       this.tlp1.TabIndex = 16;
       // 
-      // bInit
+      // button4
       // 
-      this.bInit.BackgroundImage = global::Borys.Bahn.Bahnsteuerung.Properties.Resources.leader;
-      this.bInit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-      this.bInit.Dock = System.Windows.Forms.DockStyle.Fill;
-      this.bInit.Font = new System.Drawing.Font("Bahnschrift", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.bInit.Location = new System.Drawing.Point(3, 3);
-      this.bInit.Name = "bInit";
-      this.bInit.Size = new System.Drawing.Size(260, 208);
-      this.bInit.TabIndex = 12;
-      this.bInit.Text = "Init";
-      this.bInit.TextAlign = System.Drawing.ContentAlignment.TopRight;
-      this.bInit.UseVisualStyleBackColor = true;
-      this.bInit.Click += new System.EventHandler(this.bInit_Click);
+      this.button4.BackgroundImage = global::Borys.Bahn.Bahnsteuerung.Properties.Resources.einstellung;
+      this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+      this.button4.Dock = System.Windows.Forms.DockStyle.Fill;
+      this.button4.Enabled = false;
+      this.button4.Font = new System.Drawing.Font("Bahnschrift", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.button4.Location = new System.Drawing.Point(403, 217);
+      this.button4.Name = "button4";
+      this.button4.Size = new System.Drawing.Size(194, 208);
+      this.button4.TabIndex = 24;
+      this.button4.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+      this.button4.UseVisualStyleBackColor = true;
+      this.button4.Click += new System.EventHandler(this.bSchalten_Click);
       // 
-      // bFahren
+      // bClose
       // 
-      this.bFahren.BackgroundImage = global::Borys.Bahn.Bahnsteuerung.Properties.Resources.train;
-      this.bFahren.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-      this.bFahren.Dock = System.Windows.Forms.DockStyle.Fill;
-      this.bFahren.Enabled = false;
-      this.bFahren.Font = new System.Drawing.Font("Bahnschrift", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.bFahren.Location = new System.Drawing.Point(269, 3);
-      this.bFahren.Name = "bFahren";
-      this.bFahren.Size = new System.Drawing.Size(260, 208);
-      this.bFahren.TabIndex = 14;
-      this.bFahren.Text = " ";
-      this.bFahren.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-      this.bFahren.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-      this.bFahren.UseVisualStyleBackColor = true;
-      this.bFahren.Click += new System.EventHandler(this.bFahren_Click);
+      this.bClose.BackgroundImage = global::Borys.Bahn.Bahnsteuerung.Properties.Resources.das_ende;
+      this.bClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+      this.bClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+      this.bClose.Dock = System.Windows.Forms.DockStyle.Fill;
+      this.bClose.Font = new System.Drawing.Font("Bahnschrift", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.bClose.Location = new System.Drawing.Point(603, 218);
+      this.bClose.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+      this.bClose.Name = "bClose";
+      this.bClose.Size = new System.Drawing.Size(194, 206);
+      this.bClose.TabIndex = 22;
+      this.bClose.Text = " ";
+      this.bClose.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+      this.bClose.UseVisualStyleBackColor = true;
+      this.bClose.Click += new System.EventHandler(this.bCloseClick);
       // 
       // bStop
       // 
@@ -124,15 +129,31 @@
       this.bStop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
       this.bStop.Dock = System.Windows.Forms.DockStyle.Fill;
       this.bStop.Font = new System.Drawing.Font("Bahnschrift", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.bStop.Location = new System.Drawing.Point(535, 4);
+      this.bStop.Location = new System.Drawing.Point(603, 4);
       this.bStop.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
       this.bStop.Name = "bStop";
-      this.bStop.Size = new System.Drawing.Size(262, 206);
-      this.bStop.TabIndex = 15;
+      this.bStop.Size = new System.Drawing.Size(194, 206);
+      this.bStop.TabIndex = 20;
       this.bStop.Text = "Stop";
       this.bStop.TextAlign = System.Drawing.ContentAlignment.TopLeft;
       this.bStop.UseVisualStyleBackColor = false;
       this.bStop.Click += new System.EventHandler(this.bStop_Click);
+      // 
+      // bSchalten
+      // 
+      this.bSchalten.BackgroundImage = global::Borys.Bahn.Bahnsteuerung.Properties.Resources._switch;
+      this.bSchalten.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+      this.bSchalten.Dock = System.Windows.Forms.DockStyle.Fill;
+      this.bSchalten.Enabled = false;
+      this.bSchalten.Font = new System.Drawing.Font("Bahnschrift", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.bSchalten.Location = new System.Drawing.Point(203, 217);
+      this.bSchalten.Name = "bSchalten";
+      this.bSchalten.Size = new System.Drawing.Size(194, 208);
+      this.bSchalten.TabIndex = 17;
+      this.bSchalten.Text = "schalten";
+      this.bSchalten.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+      this.bSchalten.UseVisualStyleBackColor = true;
+      this.bSchalten.Click += new System.EventHandler(this.bSchalten_Click);
       // 
       // bConfig
       // 
@@ -142,45 +163,60 @@
       this.bConfig.Font = new System.Drawing.Font("Bahnschrift", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.bConfig.Location = new System.Drawing.Point(3, 217);
       this.bConfig.Name = "bConfig";
-      this.bConfig.Size = new System.Drawing.Size(260, 208);
+      this.bConfig.Size = new System.Drawing.Size(194, 208);
       this.bConfig.TabIndex = 16;
       this.bConfig.Text = "Konfig";
       this.bConfig.TextAlign = System.Drawing.ContentAlignment.TopRight;
       this.bConfig.UseVisualStyleBackColor = true;
       this.bConfig.Click += new System.EventHandler(this.bConfig_Click);
       // 
-      // bSchalten
+      // bFahren
       // 
-      this.bSchalten.BackgroundImage = global::Borys.Bahn.Bahnsteuerung.Properties.Resources._switch;
-      this.bSchalten.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-      this.bSchalten.Dock = System.Windows.Forms.DockStyle.Fill;
-      this.bSchalten.Enabled = false;
-      this.bSchalten.Font = new System.Drawing.Font("Bahnschrift", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.bSchalten.Location = new System.Drawing.Point(269, 217);
-      this.bSchalten.Name = "bSchalten";
-      this.bSchalten.Size = new System.Drawing.Size(260, 208);
-      this.bSchalten.TabIndex = 17;
-      this.bSchalten.Text = "schalten";
-      this.bSchalten.TextAlign = System.Drawing.ContentAlignment.TopLeft;
-      this.bSchalten.UseVisualStyleBackColor = true;
-      this.bSchalten.Click += new System.EventHandler(this.bSchalten_Click);
+      this.bFahren.BackgroundImage = global::Borys.Bahn.Bahnsteuerung.Properties.Resources.train;
+      this.bFahren.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+      this.bFahren.Dock = System.Windows.Forms.DockStyle.Fill;
+      this.bFahren.Enabled = false;
+      this.bFahren.Font = new System.Drawing.Font("Bahnschrift", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.bFahren.Location = new System.Drawing.Point(203, 3);
+      this.bFahren.Name = "bFahren";
+      this.bFahren.Size = new System.Drawing.Size(194, 208);
+      this.bFahren.TabIndex = 14;
+      this.bFahren.Text = " ";
+      this.bFahren.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+      this.bFahren.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+      this.bFahren.UseVisualStyleBackColor = true;
+      this.bFahren.Click += new System.EventHandler(this.bFahren_Click);
       // 
-      // bClose
+      // bInit
       // 
-      this.bClose.BackgroundImage = global::Borys.Bahn.Bahnsteuerung.Properties.Resources.das_ende;
-      this.bClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-      this.bClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-      this.bClose.Dock = System.Windows.Forms.DockStyle.Fill;
-      this.bClose.Font = new System.Drawing.Font("Bahnschrift", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.bClose.Location = new System.Drawing.Point(535, 218);
-      this.bClose.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-      this.bClose.Name = "bClose";
-      this.bClose.Size = new System.Drawing.Size(262, 206);
-      this.bClose.TabIndex = 18;
-      this.bClose.Text = " ";
-      this.bClose.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-      this.bClose.UseVisualStyleBackColor = true;
-      this.bClose.Click += new System.EventHandler(this.bCloseClick);
+      this.bInit.BackgroundImage = global::Borys.Bahn.Bahnsteuerung.Properties.Resources.leader;
+      this.bInit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+      this.bInit.Dock = System.Windows.Forms.DockStyle.Fill;
+      this.bInit.Font = new System.Drawing.Font("Bahnschrift", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.bInit.Location = new System.Drawing.Point(3, 3);
+      this.bInit.Name = "bInit";
+      this.bInit.Size = new System.Drawing.Size(194, 208);
+      this.bInit.TabIndex = 12;
+      this.bInit.Text = "Init";
+      this.bInit.TextAlign = System.Drawing.ContentAlignment.TopRight;
+      this.bInit.UseVisualStyleBackColor = true;
+      this.bInit.Click += new System.EventHandler(this.bInit_Click);
+      // 
+      // bHäuser
+      // 
+      this.bHäuser.BackgroundImage = global::Borys.Bahn.Bahnsteuerung.Properties.Resources.steuerungHäuser;
+      this.bHäuser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+      this.bHäuser.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+      this.bHäuser.Dock = System.Windows.Forms.DockStyle.Fill;
+      this.bHäuser.Font = new System.Drawing.Font("Bahnschrift", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.bHäuser.Location = new System.Drawing.Point(403, 4);
+      this.bHäuser.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+      this.bHäuser.Name = "bHäuser";
+      this.bHäuser.Size = new System.Drawing.Size(194, 206);
+      this.bHäuser.TabIndex = 25;
+      this.bHäuser.Text = " ";
+      this.bHäuser.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+      this.bHäuser.UseVisualStyleBackColor = true;
       // 
       // fMain
       // 
@@ -214,12 +250,14 @@
     private System.Windows.Forms.StatusStrip statusStrip1;
     private System.Windows.Forms.ToolStripStatusLabel tslZeit;
     private System.Windows.Forms.TableLayoutPanel tlp1;
-    private System.Windows.Forms.Button bClose;
     private System.Windows.Forms.Button bSchalten;
     private System.Windows.Forms.Button bConfig;
-    private System.Windows.Forms.Button bStop;
     private System.Windows.Forms.Button bFahren;
     private System.Windows.Forms.Button bInit;
+    private System.Windows.Forms.Button bClose;
+    private System.Windows.Forms.Button bStop;
+    private System.Windows.Forms.Button button4;
+    private System.Windows.Forms.Button bHäuser;
   }
 }
 
