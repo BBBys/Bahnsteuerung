@@ -6,10 +6,13 @@ using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 using System.Xml.Serialization;
+using System.Data.SqlClient;
 
 namespace Borys.Bahn.Bahnsteuerung
 {
   /// <summary>
+  /// Global:
+  /// Anlagenzeit
   /// Icons:
   /// <a href="https://www.flaticon.com/de/kostenlose-icons/aufgaben" title="aufgaben Icons">Aufgaben Icons erstellt von Freepik - Flaticon</a>
   /// <a href="https://www.flaticon.com/de/kostenlose-icons/config" title="config Icons">Config Icons erstellt von srip - Flaticon</a>
@@ -19,7 +22,7 @@ namespace Borys.Bahn.Bahnsteuerung
   /// <a href="https://www.flaticon.com/de/kostenlose-icons/signalisierung" title="signalisierung Icons">Signalisierung Icons erstellt von Freepik - Flaticon</a>
   /// </summary>
   public partial class fMain : Form
-  {
+  {public cAnlagenZeit AnlagenZeit =null;
     private List<cLok> LokListe = null;
     private  fKonfig fKonfig = null;
     private readonly fFahren fFahren = null;
@@ -120,6 +123,8 @@ namespace Borys.Bahn.Bahnsteuerung
       // _ = MessageBox.Show("2", "Start", MessageBoxButtons.OK, MessageBoxIcon.None);
       fFahren.Lokliste = LokListe;
       // _ = MessageBox.Show("fertig", "Start", MessageBoxButtons.OK, MessageBoxIcon.None);
+      /*hier schon notwendige Initialisierungen*/
+      AnlagenZeit = new cAnlagenZeit();
     }
     private void fMain_Resize(object sender, EventArgs e) => Anordnen();
 
@@ -276,6 +281,7 @@ namespace Borys.Bahn.Bahnsteuerung
     private void fMain_Shown(object sender, EventArgs e)
     {
       tslZeit.Text = DateTime.Now.ToString();
+      tslAZeit.Text = AnlagenZeit.Zeit;
     }
   }
 }

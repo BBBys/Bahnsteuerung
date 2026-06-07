@@ -7,7 +7,7 @@ namespace Borys.Bahn.Bahnsteuerung
   {
     internal Action<Button, int, int> ButtonSetzen = null;
     private readonly int BUTTONSIZE;
-
+    cAnlagenZeit AnlagenZeit = fMain.AnlagenZeit;
     private void Anordnen()
     {
       if(ButtonSetzen != null)
@@ -51,6 +51,13 @@ namespace Borys.Bahn.Bahnsteuerung
     private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
     {
 
+    }
+
+    private void fSchalten_Shown(object sender, EventArgs e)
+    {
+
+      tslZeit.Text = DateTime.Now.ToString();
+      tslAZeit.Text = AnlagenZeit.Zeit;
     }
   }
 }

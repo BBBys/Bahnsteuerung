@@ -186,7 +186,8 @@ namespace PMqttServer
 
       public bool IsEnabled => true;
 
-      public void Publish(MqttNetLogLevel logLevel, string source, string message, object[]? parameters, Exception? exception)
+      public void Publish(MqttNetLogLevel logLevel, string source, string message, object[]? parameters,
+                          Exception? exception)
       {
         var foregroundColor = ConsoleColor.White;
         switch (logLevel)

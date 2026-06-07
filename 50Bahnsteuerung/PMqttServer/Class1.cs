@@ -1,11 +1,11 @@
-﻿using System;
-using System.Text;
+﻿using MqttLib;
 using MqttLib.Core;
-using MqttLib;
 using MQTTnet;
 using MQTTnet.Diagnostics;
 using MQTTnet.Protocol;
 using MQTTnet.Server;
+using System;
+using System.Text;
 namespace MqttLib
 {
   public class MqttClientFactory

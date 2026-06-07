@@ -36,6 +36,7 @@
       this.statusStrip1 = new System.Windows.Forms.StatusStrip();
       this.tslZeit = new System.Windows.Forms.ToolStripStatusLabel();
       this.tlp1 = new System.Windows.Forms.TableLayoutPanel();
+      this.bHäuser = new System.Windows.Forms.Button();
       this.button4 = new System.Windows.Forms.Button();
       this.bClose = new System.Windows.Forms.Button();
       this.bStop = new System.Windows.Forms.Button();
@@ -43,7 +44,7 @@
       this.bConfig = new System.Windows.Forms.Button();
       this.bFahren = new System.Windows.Forms.Button();
       this.bInit = new System.Windows.Forms.Button();
-      this.bHäuser = new System.Windows.Forms.Button();
+      this.tslAZeit = new System.Windows.Forms.ToolStripStatusLabel();
       this.statusStrip1.SuspendLayout();
       this.tlp1.SuspendLayout();
       this.SuspendLayout();
@@ -52,7 +53,8 @@
       // 
       this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
       this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tslZeit});
+            this.tslZeit,
+            this.tslAZeit});
       this.statusStrip1.Location = new System.Drawing.Point(0, 428);
       this.statusStrip1.Name = "statusStrip1";
       this.statusStrip1.Size = new System.Drawing.Size(800, 26);
@@ -89,6 +91,22 @@
       this.tlp1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
       this.tlp1.Size = new System.Drawing.Size(800, 428);
       this.tlp1.TabIndex = 16;
+      // 
+      // bHäuser
+      // 
+      this.bHäuser.BackgroundImage = global::Borys.Bahn.Bahnsteuerung.Properties.Resources.steuerungHäuser;
+      this.bHäuser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+      this.bHäuser.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+      this.bHäuser.Dock = System.Windows.Forms.DockStyle.Fill;
+      this.bHäuser.Font = new System.Drawing.Font("Bahnschrift", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.bHäuser.Location = new System.Drawing.Point(403, 4);
+      this.bHäuser.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+      this.bHäuser.Name = "bHäuser";
+      this.bHäuser.Size = new System.Drawing.Size(194, 206);
+      this.bHäuser.TabIndex = 25;
+      this.bHäuser.Text = " ";
+      this.bHäuser.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+      this.bHäuser.UseVisualStyleBackColor = true;
       // 
       // button4
       // 
@@ -202,21 +220,12 @@
       this.bInit.UseVisualStyleBackColor = true;
       this.bInit.Click += new System.EventHandler(this.bInit_Click);
       // 
-      // bHäuser
+      // tslAZeit
       // 
-      this.bHäuser.BackgroundImage = global::Borys.Bahn.Bahnsteuerung.Properties.Resources.steuerungHäuser;
-      this.bHäuser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-      this.bHäuser.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-      this.bHäuser.Dock = System.Windows.Forms.DockStyle.Fill;
-      this.bHäuser.Font = new System.Drawing.Font("Bahnschrift", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.bHäuser.Location = new System.Drawing.Point(403, 4);
-      this.bHäuser.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-      this.bHäuser.Name = "bHäuser";
-      this.bHäuser.Size = new System.Drawing.Size(194, 206);
-      this.bHäuser.TabIndex = 25;
-      this.bHäuser.Text = " ";
-      this.bHäuser.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-      this.bHäuser.UseVisualStyleBackColor = true;
+      this.tslAZeit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+      this.tslAZeit.Name = "tslAZeit";
+      this.tslAZeit.Size = new System.Drawing.Size(40, 20);
+      this.tslAZeit.Text = "??:??";
       // 
       // fMain
       // 
@@ -258,6 +267,7 @@
     private System.Windows.Forms.Button bStop;
     private System.Windows.Forms.Button button4;
     private System.Windows.Forms.Button bHäuser;
+    private System.Windows.Forms.ToolStripStatusLabel tslAZeit;
   }
 }
 
