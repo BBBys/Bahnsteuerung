@@ -1,3 +1,6 @@
+#include <Arduino.h>
+#include <Licht.h>
+
 class Licht
 {
   private:
@@ -12,22 +15,22 @@ class Licht
       digitalWrite(Pin, LOW);
       istAn = false;
     }
-    aus()
+    void aus()
     {
       digitalWrite(Pin, LOW);
       istAn = false;
     }
-    ein()
+    void ein()
     {
       digitalWrite(Pin, HIGH);
       istAn = true;
     }
-    setzen(bool p)
+    void setzen(bool p)
     {
       if (p)ein();
       else aus();
     }
-    weg()
+    void weg()
     {
       int d;
       for (d = 500; d > 50; d = d - 20)
@@ -39,7 +42,7 @@ class Licht
       }
       aus();
     }
-    hin()
+    void hin()
     {
       int d;
       for (d = 50; d < 500; d = d + 20)
@@ -60,11 +63,11 @@ class BLicht : Licht
 
     unsigned long wechsel, Tan, Taus;
   public:
-    set(int pTan, int pTaus)
+ void   set(int pTan, int pTaus)
     {
       set(pTan, pTaus, 0);
     }
-    set(int pTan, int pTaus, int pW)
+    void set(int pTan, int pTaus, int pW)
     {
       Tan = pTan;
       Taus = pTaus;
@@ -79,7 +82,7 @@ class BLicht : Licht
       wechsel = 0;
       Stat = stAus;
     }
-    blinken(bool pAn)
+    void  blinken(bool pAn)
     {
       if (pAn)Stat = stBlink;
       else
@@ -88,9 +91,9 @@ class BLicht : Licht
         digitalWrite(Pin, LOW);
       }
     }
-    check()
+    void check()
     {
-      if (Stat = stBlink)
+      if (Stat == stBlink)
       {
         unsigned long jetzt;
         jetzt = millis();

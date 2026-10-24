@@ -2,11 +2,15 @@
  * @file MHMqtt.cpp
  * @brief MQTT für Burg
  * @version 1.1
- * @date 9 Okt 2024 14 4 3 OKT 27 Sep 2023
+ * @date 24 Okt 2026 9 Okt 2024 14 4 3 OKT 27 Sep 2023
  * @author Dr. Burkhard Borys, Zeller Ring 15, 34246 Vellmar, Deutschland
- * @copyright Copyright (c) 2023-2024 B. Borys
+ * @copyright Copyright (c) 2023-2026 B. Borys
  */
 #include "LichtBurg.h"
+#include <Loggingmakros.h>
+#include "Ticker.h"
+#include "Adafruit_NeoPixel.h"
+
 extern Ticker Zeitgeber;
 extern Adafruit_NeoPixel pixels;
 extern tZustande Zustand;
@@ -34,7 +38,7 @@ EspMQTTClient client(
  */
 void onConnectionEstablished()
 {
-   log_d("onConnectionEstablished...");
+   DEBUG_PRINT("onConnectionEstablished...");
    client.subscribe("u/zeit", [](const String &payload)
                     {
                        u_int8_t pl;

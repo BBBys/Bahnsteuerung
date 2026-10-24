@@ -2,15 +2,24 @@
  * @file main.cpp
  * @brief Licht und Effekte an der Burg
  * @version 1.0
- * @date 8 Okt 2024
+ * @date 24 Okt 2026 8 Okt 2024
  * @author Dr. Burkhard Borys, Zeller Ring 15, 34246 Vellmar, Deutschland
- * @copyright Copyright (c) 2024 B. Borys
+ * @copyright Copyright (c) 2024-2026 B. Borys
  */ 
 #include<Arduino.h>
+#include <loggingmakros.h>
+#include <SoftwareSerial.h>
+#include <MP3Player_KT403A.h>
 #include "Licht.h"
 
 #include <EspMQTTClient.h>
 extern EspMQTTClient client;
+
+// MP3-Board
+// mp3 ist globale Variable
+SoftwareSerial mp3(D1, D2); // Board (RX,TX) ist (innen, aussen) ist (weiss, gelb)
+// vertauscht SoftwareSerial mp3(D1, D2); // RX,TX = weiss, gelb
+// MISO, MOSI = D6, D7 SoftwareSerial mp3(D6, D7); // MI,MO = weiss, gelb
 
 /// @brief wann wird weitergeschaltet
 /// @param zeit in Sekunden
@@ -48,6 +57,13 @@ BLicht *turm1, *turm2, *augen1, *augen2;
 /// @brief 
 void setup()
 {
+  Serial.begin(9600);
+  // mp3 als globale Variable
+  mp3.begin(9600);
+  SelectPlayerDevice(0x02); // Select SD card as the player device.
+  SetVolume(0x17);          // Set the volume, the range is 0x00 to 0x1E.
+  delay(100);
+
   stat = start;
   augen2 = new BLicht(AUGEN2, 10000, 200);
   augen1 = new BLicht(AUGEN1, 11000, 250);
@@ -65,7 +81,7 @@ void setup()
 #endif
   client.enableHTTPWebUpdater("/");
   client.enableLastWillMessage("Burg/lastwill", "Abbruch Burg"); /// LWT-Meldung
-  log_d("MQTT---Init OK");
+  LOG_DEBUG("MQTT---Init OK");
 }
 
 void loop()

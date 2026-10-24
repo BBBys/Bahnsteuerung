@@ -102,7 +102,7 @@ public:
     }
     void check()
     {
-        if (Stat = stBlink)
+        if (Stat == stBlink)
         {
             unsigned long jetzt;
             jetzt = millis();

@@ -1,4 +1,6 @@
-#pragma once
+#ifndef _LICHT_H
+#define _LICHT_H
+
 class Licht
 {
 private:
@@ -31,3 +33,5 @@ public:
     void blinken(bool pAn);
     void check();
 };
+
+#endif
