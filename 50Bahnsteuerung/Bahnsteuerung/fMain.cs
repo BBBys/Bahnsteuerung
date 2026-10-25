@@ -1,12 +1,10 @@
-﻿using System.Configuration;
-using Borys.Bahn.CANguru.Com;
+﻿using Borys.Bahn.CANguru.Com;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 using System.Xml.Serialization;
-using System.Data.SqlClient;
 
 namespace Borys.Bahn.Bahnsteuerung
 {
@@ -22,9 +20,11 @@ namespace Borys.Bahn.Bahnsteuerung
   /// <a href="https://www.flaticon.com/de/kostenlose-icons/signalisierung" title="signalisierung Icons">Signalisierung Icons erstellt von Freepik - Flaticon</a>
   /// </summary>
   public partial class fMain : Form
-  {public cAnlagenZeit AnlagenZeit =null;
+  {
+    public cAnlagenZeit AnlagenZeit = null;
     private List<cLok> LokListe = null;
-    private  fKonfig fKonfig = null;
+    private fKonfig fKonfig = null;
+    private fHäuser fHäuser = null;
     private readonly fFahren fFahren = null;
     private readonly fSchalten fSchalten = null;
     /// <summary>
@@ -46,27 +46,27 @@ namespace Borys.Bahn.Bahnsteuerung
       string ergebnis = null;
       try
       {
-        using(TextReader reader = new StreamReader(KONFIGDATEI))
+        using (TextReader reader = new StreamReader(KONFIGDATEI))
         {
           string zeile;
           zeile = reader.ReadLine();
           //_ = MessageBox.Show("1", "Lokliste", MessageBoxButtons.OK, MessageBoxIcon.None);
 
-          if(zeile != null)
+          if (zeile != null)
           {
             //wir haben Text
             //   _ = MessageBox.Show("2", "Lokliste", MessageBoxButtons.OK, MessageBoxIcon.None);
 
             do
             {
-              if(zeile.StartsWith(cLok.LOKCONFIGSTART))
+              if (zeile.StartsWith(cLok.LOKCONFIGSTART))
               {
                 cLok lok;
                 //  _ = MessageBox.Show("3", "Lokliste", MessageBoxButtons.OK, MessageBoxIcon.None);
 
                 lok = new cLok(reader);
                 //_ = MessageBox.Show("4", "Lokliste", MessageBoxButtons.OK, MessageBoxIcon.None);
-                if(lok.Gültig)
+                if (lok.Gültig)
                 {
                   lokListe.Add(lok);//liest eine Lok-Konfiguration
                   ergebnis = "...gelesen";
@@ -79,7 +79,7 @@ namespace Borys.Bahn.Bahnsteuerung
                 }//else gültig}
               }//if LOKCONFIGSTART
               zeile = reader.ReadLine();
-            } while(zeile != null);
+            } while (zeile != null);
           }//if zeile!=null
           else//Zeile != null
           {
@@ -88,7 +88,7 @@ namespace Borys.Bahn.Bahnsteuerung
           }//else//Zeile != null
         }//using
       }//try
-      catch(FileNotFoundException fnf)
+      catch (FileNotFoundException fnf)
       {
         _ = MessageBox.Show(fnf.Message, "Lok einlesen", MessageBoxButtons.OK, MessageBoxIcon.Error);
         ergebnis = "...Fehler";
@@ -112,7 +112,7 @@ namespace Borys.Bahn.Bahnsteuerung
 
       Anordnen();
       fFahren = new fFahren();
-      fSchalten = new fSchalten
+      fSchalten = new fSchalten(this)
       {
         //fFahren.ButtonSetzen = ButtonSetzen;
         ButtonSetzen = ButtonSetzen
@@ -128,10 +128,10 @@ namespace Borys.Bahn.Bahnsteuerung
     }
     private void fMain_Resize(object sender, EventArgs e) => Anordnen();
 
-   /// <summary>
-   /// Buttons im Hauptfenster anordnen
-   /// </summary>
-   private void Anordnen()
+    /// <summary>
+    /// Buttons im Hauptfenster anordnen
+    /// </summary>
+    private void Anordnen()
     {
       int links, oben, rechts, mitte, unten;
       links = 1;
@@ -159,7 +159,7 @@ namespace Borys.Bahn.Bahnsteuerung
     /// <param name="oben"></param>
     private void ButtonSetzen(Button button, int links, int oben)
     {
-      if(button is null)
+      if (button is null)
         throw new ArgumentNullException(nameof(button));
       button.Left = links;
       button.Top = oben;
@@ -174,7 +174,7 @@ namespace Borys.Bahn.Bahnsteuerung
     private void fMain_FormClosing(object sender, FormClosingEventArgs e)
     {
       //timer1.Enabled = false;
-      if(CAN != null)
+      if (CAN != null)
       {
         CAN.Dispose();
         CAN = null;
@@ -184,7 +184,7 @@ namespace Borys.Bahn.Bahnsteuerung
 
     private void bStop_Click(object sender, EventArgs e)
     {
-      if(CAN != null)
+      if (CAN != null)
         CAN.Stop();
     }
 
@@ -197,7 +197,7 @@ namespace Borys.Bahn.Bahnsteuerung
       Button b = (Button)sender;
       CAN = new cCANVerbindung(strIpCANBridge);
       _ = CAN.Send(BRIDGEINIT);
-      if(CAN.Verbunden())
+      if (CAN.Verbunden())
       {
         fFahren.CAN = CAN;
         fFahren.Lokliste = LokListe;
@@ -215,11 +215,11 @@ namespace Borys.Bahn.Bahnsteuerung
 
     private void bConfig_Click(object sender, EventArgs e)
     {
-      if(fKonfig == null)
+      if (fKonfig == null)
       {
         fKonfig = new fKonfig();
       }
-      
+
       fKonfig.LokListe = LokListe;
       _ = fKonfig.ShowDialog();
       LokListe = fKonfig.LokListe;
@@ -246,7 +246,7 @@ namespace Borys.Bahn.Bahnsteuerung
       }
       finally
       {
-        if(writer != null)
+        if (writer != null)
         {
           writer.Close();
         }
@@ -271,7 +271,7 @@ namespace Borys.Bahn.Bahnsteuerung
       }
       finally
       {
-        if(reader != null)
+        if (reader != null)
         {
           reader.Close();
         }
@@ -282,6 +282,21 @@ namespace Borys.Bahn.Bahnsteuerung
     {
       tslZeit.Text = DateTime.Now.ToString();
       tslAZeit.Text = AnlagenZeit.Zeit;
+    }
+
+    private void tlp1_Paint(object sender, PaintEventArgs e)
+    {
+
+    }
+
+    private void bHäuser_Click(object sender, EventArgs e)
+    {
+      if (fHäuser == null)
+      {
+        fHäuser = new fHäuser();
+      }
+
+      _ = fHäuser.ShowDialog();
     }
   }
 }

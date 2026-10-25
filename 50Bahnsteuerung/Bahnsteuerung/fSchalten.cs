@@ -5,9 +5,9 @@ namespace Borys.Bahn.Bahnsteuerung
 {
   public partial class fSchalten : Form
   {
+    private readonly cAnlagenZeit AnlagenZeit;
     internal Action<Button, int, int> ButtonSetzen = null;
     private readonly int BUTTONSIZE;
-    cAnlagenZeit AnlagenZeit = fMain.AnlagenZeit;
     private void Anordnen()
     {
       if(ButtonSetzen != null)
@@ -37,11 +37,15 @@ namespace Borys.Bahn.Bahnsteuerung
         }
       }
     }
-
-    public fSchalten()
+    /// <summary>
+    /// Konstruktor
+    /// </summary>
+    /// <param name="fMain">Zugriff auf Aurufer</param>
+    public fSchalten(fMain fMain)
     {
       InitializeComponent();
       BUTTONSIZE = Properties.Settings.Default.BUTTONSIZE;
+       AnlagenZeit = fMain.AnlagenZeit;
     }
 
     private void bClose_Click(object sender, EventArgs e) => Hide();

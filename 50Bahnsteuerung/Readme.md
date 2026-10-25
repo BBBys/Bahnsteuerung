@@ -1,38 +1,49 @@
-# Projektmappe Bahnsteuerung
-## Bahnsteuerung
+Projektmappe Bahnsteuerung
+
+# Bahnsteuerung
 Programm zur Steuerung über CAN-Bus-Befehle.
 Läuft auf 800x480-Touchscreen.
 In Entwicklung, aber im wesentlichen schon 
 funktionsfähige Version.
-### GUI
+## Schaltflächen
+-	Häuser: MQTT-Steuerung
+in Arbeit
+
+## GUI
 - Font: Bahnschrift 18 pt
-## Testprogramme
-### PTouch
+
+# Testprogramme
+## PTouch
 Programm für den 800x480-Touchscreen,
 dabei ist die Fensterfläche 806x450 und wird durch *WindowState = Maximized* erreicht.
 (Prüfen der Fenster-Abmessungen im Branch *SizeTest*.)
 Test für Größen und Anordnung
-#### GUI
+### GUI
 Button-Scrift: *MS Sans Serif*, 15pt, Fett
-### TestBahnsteuerung
+
+## TestBahnsteuerung
 Testprogramm, um CAN-Befehle zusammenzustellen und zu zu senden
-### Steuerprogramm
+
+## Steuerprogramm
 Testprogramm, um Loks mit ihren Funktionen anzusprechen und CAN-Befehle zu senden
-### PMqttBroker, PMqttServer
+
+## PMqttBroker, PMqttServer
 MQTT-Tests 
 Software: https://github.com/dotnet/MQTTnet
 Dokumentation: https://mqtt.org/
-#### PMqttBroker
+### PMqttBroker
 bisher nur Programmrumpf
-#### PMqttServer
+### PMqttServer
 Eigetlich auch ein Broker, hier Konsolen-Programm, das MQTT-Verkehr zeigt.
 Hat Fehler.
+
 # Quellen
 - Gustav Wostrack, Digitale Modellbahn selbstgebaut : CANguru-Steuerung mit ESP32 in Arduino-Umgebung. Dpunkt.verlag, 2020.
 Insbesondere die CAN-Bus-Routinen stammen aus dem Buch.
 - N.N., Kommunikationsprotokoll Graphical User Interface Prozessor (GUI) <-> Gleisformat Prozessor (Gleis Format Prozessor) über CAN Transportierbar über Ethernet. Göppingen: Gebr. Märklin & Cie. GmbH 2012.
 - S. Cope, How MQTT Works - Beginners Guide, Steve’s Internet Guide. Accessed: Jun. 06, 2026. [Online]. Available: http://www.steves-internet-guide.com/mqtt-works/
 - MQTTnet v.5.1.0 https://github.com/dotnet/MQTTnet/tree/master
+
 ## Icons
 - <a href="https://www.flaticon.com/de/kostenlose-icons/aufgaben" title="aufgaben Icons">Aufgaben Icons erstellt von Freepik - Flaticon</a>
 - <a href="https://www.flaticon.com/de/kostenlose-icons/config" title="config Icons">Config Icons erstellt von srip - Flaticon</a>
